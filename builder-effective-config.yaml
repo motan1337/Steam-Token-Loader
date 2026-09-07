@@ -1,0 +1,19 @@
+directories:
+  output: release
+  buildResources: build
+appId: cc.motan.steamtokenloader
+productName: Steam Token Loader
+files:
+  - filter:
+      - src/**/*
+      - '!**/*.map'
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  icon: icon.ico
+  requestedExecutionLevel: requireAdministrator
+portable:
+  requestExecutionLevel: admin
+electronVersion: 31.7.7
