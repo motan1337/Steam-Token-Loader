@@ -1,0 +1,39 @@
+{
+  "name": "token-loader",
+  "version": "1.0.0",
+  "description": "Token Steam login. Paste a login token and press Log in, Steam signs in with no password and no Steam Guard prompt.",
+  "author": "motan1337",
+  "license": "MIT",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "set CSC_IDENTITY_AUTO_DISCOVERY=false&&electron-builder --win",
+    "pack": "set CSC_IDENTITY_AUTO_DISCOVERY=false&&electron-builder --win --dir"
+  },
+  "devDependencies": {
+    "electron": "^31.7.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "cc.motan.steamtokenloader",
+    "productName": "Steam Token Loader",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "!**/*.map"
+    ],
+    "win": {
+      "target": [
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "icon.ico",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "portable": {
+      "requestExecutionLevel": "admin"
+    }
+  }
+}
