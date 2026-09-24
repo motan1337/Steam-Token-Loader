@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Steam Token Loader</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<main class="page">
+
+  <header class="head">
+    <h1>Steam Token Loader</h1>
+    <div class="sub">Paste a login token, press Log in.</div>
+  </header>
+
+  <div id="admin-banner" class="banner hidden">
+    <div>
+      <div class="banner-title">Not running as Administrator</div>
+      <div class="banner-sub">Writing to Steam files will fail. Restart elevated.</div>
+    </div>
+    <button id="admin-restart" class="btn btn-sm">Restart as Admin</button>
+  </div>
+
+  <section class="block">
+    <label class="label" for="token">Token</label>
+    <textarea id="token" rows="4" spellcheck="false" autocomplete="off"
+      placeholder="76561199…----eyJ… . eyJ… . …&#10;or just the eyJ… token"></textarea>
+    <div id="hint" class="hint">Paste the line as you received it (<span class="mono">id----token</span>) or just the token the app reads the account from the token itself.</div>
+  </section>
+
+  <button id="login-btn" class="btn btn-primary btn-wide">Log in &amp; launch Steam</button>
+
+  <div id="status" class="status"></div>
+
+  <details class="note">
+    <summary>How it works</summary>
+    <p>The app finds Steam, writes the account into <span class="mono">config.vdf</span> and
+       <span class="mono">loginusers.vdf</span>, stores the token DPAPI encrypted in
+       <span class="mono">local.vdf</span>, sets it as the auto login user, and starts Steam.
+       It only adds/updates that one account it never deletes files or removes your other accounts like other loaders.</p>
+    <p class="dim">Steam must be installed and signed into any account once before first use, so its
+       config files exist. Needs Administrator to write into Steam folder. Not affiliated with Valve/Steam
+       use only accounts you own or are allowed to use and use on your own risk.</p>
+  </details>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
