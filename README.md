@@ -1,4 +1,4 @@
-# Steam Token Loader by motan1337
+# Steam Token Loader
 
 A tiny Windows app that logs Steam into an account using a login token no
 password needed, and no Steam Guard prompt. Paste a token, press
